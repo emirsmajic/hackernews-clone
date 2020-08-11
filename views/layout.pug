@@ -22,13 +22,16 @@ html(lang="en")
     main
       .container
         block content
-          each news in data
-            ul
-              li
-                a(href=news.link, rel="noopenerr noreferrer" target="_blank")= news.title
-                p
-                  span#first= news.time
-                  span= news.points
+          if data
+            each news in data
+              ul
+                li
+                  a(href=news.link, rel="noopenerr noreferrer" target="_blank")= news.title
+                  p
+                    span#first= news.time
+                    span= news.points
+          else
+            p Error 404. Resource not found.          
     footer
       .container
         - var year = new Date().getFullYear()

@@ -7,7 +7,26 @@ const PAST_NEWS_URL = "https://news.ycombinator.com/front"
 const SHOW_NEWS_URL = "https://news.ycombinator.com/show"
 const JOBS_NEWS_URL = "https://news.ycombinator.com/jobs"
 
-async function collectData(url) {
+async function collectData(newsType) {
+  let url
+  switch (newsType) {
+    case "homepage":
+      url = HOME_NEWS_URL
+      break
+    case "new":
+      url = NEW_NEWS_URL
+      break
+    case "past":
+      url = PAST_NEWS_URL
+      break
+    case "show":
+      url = SHOW_NEWS_URL
+      break
+    case "jobs":
+      url = JOBS_NEWS_URL
+      break
+  }
+
   const response = await axios.get(url)
   const $ = cheerio.load(response.data)
   let data = []
@@ -28,30 +47,6 @@ async function collectData(url) {
   return data
 }
 
-async function getHomepageData() {
-  return await collectData(HOME_NEWS_URL)
-}
-
-async function getNewData() {
-  return await collectData(NEW_NEWS_URL)
-}
-
-async function getPastData() {
-  return await collectData(PAST_NEWS_URL)
-}
-
-async function getShowData() {
-  return await collectData(SHOW_NEWS_URL)
-}
-
-async function getJobsData() {
-  return await collectData(JOBS_NEWS_URL)
-}
-
 module.exports = {
-  getHomepageData,
-  getNewData,
-  getPastData,
-  getShowData,
-  getJobsData,
+  collectData,
 }

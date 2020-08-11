@@ -3,13 +3,7 @@ const path = require("path")
 const helmet = require("helmet")
 const cors = require("cors")
 const morgan = require("morgan")
-const {
-  getHomepageData,
-  getNewData,
-  getPastData,
-  getShowData,
-  getJobsData,
-} = require("./scraper")
+const { collectData } = require("./scraper")
 
 const app = express()
 
@@ -27,31 +21,31 @@ app.set("view engine", "pug")
 
 // routes
 app.get("/", async (req, res) => {
-  const data = await getHomepageData()
-  return res.render("homepage", { data })
+  const data = await collectData("homepage")
+  return res.render("layout", { data })
 })
 
 app.get("/new", async (req, res) => {
-  const data = await getNewData()
-  return res.render("new", { data })
+  const data = await collectData("new")
+  return res.render("layout", { data })
 })
 
 app.get("/past", async (req, res) => {
-  const data = await getPastData()
-  return res.render("past", { data })
+  const data = await collectData("past")
+  return res.render("layout", { data })
 })
 
 app.get("/show", async (req, res) => {
-  const data = await getShowData()
-  return res.render("show", { data })
+  const data = await collectData("show")
+  return res.render("layout", { data })
 })
 
 app.get("/jobs", async (req, res) => {
-  const data = await getJobsData()
-  return res.render("jobs", { data })
+  const data = await collectData("jobs")
+  return res.render("layout", { data })
 })
 
-app.get("*", (req, res) => res.render("404"))
+app.get("*", (req, res) => res.render("layout"))
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}...`))
