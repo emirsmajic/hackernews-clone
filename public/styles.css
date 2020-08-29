@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
 
 *,
 *::before,
@@ -9,9 +9,8 @@
 }
 
 body {
-  font-family: "Rubik", sans-serif;
-  color: #121212;
-  background: #fcfcfc;
+  font-family: "Inter", sans-serif;
+  color: #1a202c;
 }
 
 h1,
@@ -51,14 +50,6 @@ main {
   padding: 0 1rem;
 }
 
-header {
-  border-bottom: 1px solid #f0f0f0;
-}
-
-footer {
-  border-top: 1px solid #f0f0f0;
-}
-
 header > div {
   display: flex;
   justify-content: space-between;
@@ -74,7 +65,6 @@ header h1 {
 }
 
 header ul li a {
-  color: #555555;
   display: block;
   border-radius: 4px;
   padding: 8px 16px;
@@ -90,20 +80,19 @@ header ul li a:hover {
 main ul li {
   margin-bottom: 1.5rem;
   border-radius: 4px;
-  padding: 0.75rem 0 0.75rem 2rem;
-  background: white;
-  border: 1px solid #eef0f4;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eef0f4;
   width: 100%;
   transition: box-shadow 380ms ease;
 }
 
-main ul li:hover {
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.05);
-}
-
 main ul li a {
-  font-size: 24px;
+  font-size: 20px;
+  /* color: #1a202c; */
+  color: #2d3748;
+}
+main ul li a:hover {
+  color: black;
 }
 main ul li p {
   padding-top: 4px;
@@ -116,8 +105,12 @@ main ul li span {
   display: inline-block;
   color: #999;
 }
-main ul li span#first {
+main ul li span#time {
   margin-right: 1rem;
+}
+main ul li span#points {
+  border-radius: 2px;
+  padding: 3px 8px;
 }
 
 @media (max-width: 986px) {

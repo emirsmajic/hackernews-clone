@@ -28,11 +28,12 @@ html(lang="en")
                 li
                   a(href=news.link, rel="noopenerr noreferrer" target="_blank")= news.title
                   p
-                    span#first= news.time
-                    span= news.points
+                    span#time= news.time
+                    span#points= news.points
           else
             p Error 404. Resource not found.          
     footer
       .container
         - var year = new Date().getFullYear()
         p &copy; #{year} emsmjc. All rights reserved.
+    script(src="./main.js")
