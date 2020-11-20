@@ -23,17 +23,13 @@ html(lang="en")
       .container
         block content
           if data
-            each news in data
-              ul
+            ul
+              each news in data
                 li
                   a(href=news.link, rel="noopenerr noreferrer" target="_blank")= news.title
                   p
                     span#time= news.time
                     span#points= news.points
           else
-            p Error 404. Resource not found.          
-    footer
-      .container
-        - var year = new Date().getFullYear()
-        p &copy; #{year} emsmjc. All rights reserved.
+            p Error 404. Resource not found.         
     script(src="./main.js")

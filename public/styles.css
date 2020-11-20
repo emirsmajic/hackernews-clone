@@ -11,6 +11,7 @@
 body {
   font-family: "Inter", sans-serif;
   color: #1a202c;
+  background: #f3f4f6;
 }
 
 h1,
@@ -33,21 +34,18 @@ ul {
   align-items: center;
 }
 
-header,
-footer,
-main {
-  padding: 1.5rem 0;
-}
-
 main {
   min-height: 90vh;
   padding-bottom: 0;
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 980px;
   margin: auto;
-  padding: 0 1rem;
+}
+
+header {
+  padding: 1rem 0;
 }
 
 header > div {
@@ -61,45 +59,57 @@ header ul {
 
 header h1 {
   flex: 2;
-  color: #ff6600;
+  color: #c2410c;
 }
 
 header ul li a {
   display: block;
   border-radius: 4px;
   padding: 8px 16px;
-  transition: 380ms ease;
-  transition-property: background, color;
 }
 
 header ul li a:hover {
   color: #121723;
-  background: #eef0f4;
+  background: #e5e7eb;
+}
+
+main {
+  padding-bottom: 2rem;
+}
+
+main > div {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #f7f8f9;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+main ul {
+  display: flex;
+  flex-direction: column;
 }
 
 main ul li {
-  margin-bottom: 1.5rem;
-  border-radius: 4px;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid #eef0f4;
   width: 100%;
-  transition: box-shadow 380ms ease;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+}
+
+main ul li:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 main ul li a {
   font-size: 20px;
-  /* color: #1a202c; */
-  color: #2d3748;
-}
-main ul li a:hover {
-  color: black;
+  color: #1c1917;
 }
 main ul li p {
-  padding-top: 4px;
   display: flex;
   align-items: center;
 }
-
 main ul li span {
   font-size: 14px;
   display: inline-block;
